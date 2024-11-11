@@ -1,0 +1,14 @@
+.body {
+  min-height: 100vh;
+}
+
+.contenedor-router-oulet {
+  height: 100%;
+}
+
+.contenedor-principal {
+  background-image: url("https://images.unsplash.com/photo-1716323373551-88465fb4d986?q=80&w=2073&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+  background-size: auto;
+  background-position: center;
+  opacity: 0.85;
+}

@@ -1,0 +1,29 @@
+<section id="catalogo" class="container bg-light p-4 rounded-2">
+  <div class="row justify-content-center">
+    <div class="container d-flex justify-content-between align-items-center">
+      <h1>Catalogo de películas</h1>
+      <button routerLink="/add-movie" class="btn btn-primary align-self-center">
+        Agregar Película
+      </button>
+    </div>
+
+    <div
+      *ngFor="let movie of movies"
+      class="col-12 col-md-6 col-lg-4 p-0"
+      style="width: 18rem"
+    >
+      <div class="card">
+        <img [src]="movie.cover" class="card-img-top" alt="{{ movie.title }}" />
+        <div class="card-body">
+          <h5 class="card-title">{{ movie.title }}</h5>
+
+          <a
+            [routerLink]="['/movie', movie.id]"
+            class="card-btn btn btn-primary"
+            >Ver detalles</a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

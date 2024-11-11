@@ -1,0 +1,67 @@
+<!-- edit-movie.component.html -->
+<div class="container bg-light p-4 rounded-2 col-12 col-lg-9">
+  <h2 class="text-center mb-2">Editar Película</h2>
+
+  <!-- Alerta de éxito -->
+  <div
+    *ngIf="showSuccessMessage"
+    class="alert alert-success alert-dismissible fade show"
+    role="alert"
+  >
+    Cambios guardados con éxito.
+  </div>
+
+  <form [formGroup]="movieForm" (ngSubmit)="onSubmit()">
+    <div class="mb-3">
+      <label for="title" class="form-label fw-semibold">Nombre:</label>
+      <input
+        id="title"
+        formControlName="title"
+        class="form-control"
+        placeholder="Ingresa el nombre de la película"
+      />
+    </div>
+
+    <div class="mb-3">
+      <label for="synopsis" class="form-label fw-semibold">Sinopsis:</label>
+      <textarea
+        id="synopsis"
+        formControlName="synopsis"
+        class="form-control"
+        rows="3"
+        placeholder="Ingresa la sinopsis de la película"
+        resize="none"
+      ></textarea>
+    </div>
+
+    <div class="mb-3">
+      <label for="year" class="form-label fw-semibold">Año:</label>
+      <input
+        id="year"
+        type="number"
+        formControlName="year"
+        class="form-control"
+        placeholder="Año de lanzamiento"
+      />
+    </div>
+
+    <div class="mb-3">
+      <label for="cover" class="form-label fw-semibold">Portada (URL):</label>
+      <input
+        id="cover"
+        formControlName="cover"
+        class="form-control"
+        placeholder="URL de la imagen de la película"
+      />
+    </div>
+
+    <div class="d-flex">
+      <button type="submit" class="btn btn btn-success mt-2 me-2">
+        Guardar Cambios
+      </button>
+      <button type="button" class="btn btn-secondary mt-2" (click)="cancel()">
+        Cancelar
+      </button>
+    </div>
+  </form>
+</div>

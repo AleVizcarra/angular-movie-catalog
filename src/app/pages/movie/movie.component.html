@@ -1,0 +1,45 @@
+<div class="contenedor-pelicula container bg-light w-75 p-4 p-md-5 rounded-2">
+  <!-- Alerta de eliminación -->
+  <div
+    *ngIf="showDeleteMessage"
+    class="alert alert-danger alert-dismissible fade show"
+    role="alert"
+  >
+    Película eliminada exitosamente.
+  </div>
+
+  <div
+    class="d-flex flex-sm-column flex-lg-row align-items-lg-center align-items-sm-center"
+  >
+    <img
+      class="align-items-center"
+      [src]="movie.cover"
+      alt="{{ movie.title }}"
+    />
+    <div
+      class="info-pelicula ms-0 ms-lg-5 d-flex flex-sm-column text-center text-lg-start"
+    >
+      <h1 class="mt-2 mb-2 mb-md-4">{{ movie.title }}</h1>
+      <p>
+        <span class="fw-semibold sinopsis">Sinopsis:</span> {{ movie.synopsis }}
+      </p>
+      <p><span class="fw-semibold">Año:</span> {{ movie.year }}</p>
+      <div>
+        <button class="btn btn-primary me-2 mt-2 mt-md-2" (click)="editMovie()">
+          Editar
+        </button>
+        <button
+          class="btn btn-danger me-2 mt-2 mt-md-2"
+          (click)="confirmDelete()"
+        >
+          Eliminar
+        </button>
+        <a
+          href="/movies"
+          class="btn btn-dark align-self-center align-self-lg-start mt-2 mt-md-2"
+          >Explorar más películas</a
+        >
+      </div>
+    </div>
+  </div>
+</div>
